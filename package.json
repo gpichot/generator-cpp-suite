@@ -1,0 +1,19 @@
+{
+    "name": "generator-cpp",
+    "version": "0.1.0",
+    "description": "A yeoman generator for C++ applications",
+    "files": [
+        "app",
+        "router"
+    ],
+    "dependencies": {
+        "yeoman-generator": "^0.20.2"
+    },
+    "keywords": [
+        "yeoman-generator",
+        "c++",
+        "cpp"
+    ],
+    "author": "Gabriel Pichot",
+    "license": "ISC"
+}
