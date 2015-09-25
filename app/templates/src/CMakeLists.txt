@@ -1,20 +1,26 @@
 
+file(
+    GLOB
+    headers
+    *.hpp
+)
+
+file(
+    GLOB
+    sources
+    *.cpp
+)
 
 add_library(
     <%= projectSlug %>
     SHARED
-    default.cpp
+    ${sources}
+    ${headers}
 )
 
 install(
     TARGETS <%= projectSlug %>
     DESTINATION lib
-)
-
-file(
-    GLOB
-    headers
-    *.hpp
 )
 
 install(

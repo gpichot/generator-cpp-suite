@@ -91,4 +91,5 @@ CppSuiteGenerator.prototype.doxygen = function doxygen() {
 CppSuiteGenerator.prototype.benchmarks = function benchmarks() {
     this.mkdir('benchmarks');
     this.copy('benchmarks/CMakeLists.txt', 'benchmarks/CMakeLists.txt');
+    this.copy('benchmarks/main.cpp', 'benchmarks/main.cpp');
 }

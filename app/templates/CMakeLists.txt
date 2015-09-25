@@ -10,7 +10,7 @@ set(CMAKE_PROJECT_FULL_NAME "Projet Name")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
-project(<%= projectSlug %>)
+project(<%= projectSlug %> CXX)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++14")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++14")
