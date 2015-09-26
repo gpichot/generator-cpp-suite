@@ -1,5 +1,5 @@
 {
-    "name": "generator-cpp",
+    "name": "generator-cpp-suite",
     "version": "0.1.0",
     "description": "A yeoman generator for C++ applications",
     "homepage": "https://github.com/gpichot/generator-cpp-suite",
