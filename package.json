@@ -2,10 +2,18 @@
     "name": "generator-cpp",
     "version": "0.1.0",
     "description": "A yeoman generator for C++ applications",
-    "files": [
-        "app",
-        "router"
-    ],
+    "homepage": "https://github.com/gpichot/generator-cpp-suite",
+    "bugs": "https://github.com/gpichot/generator-cpp-suite/issues",
+    "author": {
+        "name": "Gabriel Pichot",
+        "email": "gabriel.pichot@gmail.com",
+        "url": "https://www.gabrielpichot.com/"
+    },
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gpichot/generator-cpp-suite.git"
+    },
     "dependencies": {
         "yeoman-generator": "^0.20.2"
     },
@@ -14,6 +22,5 @@
         "c++",
         "cpp"
     ],
-    "author": "Gabriel Pichot",
-    "license": "ISC"
+    "license": "AGPL-1.0"
 }
