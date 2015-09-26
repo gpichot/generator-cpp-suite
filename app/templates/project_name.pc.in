@@ -1,5 +1,5 @@
 Name: @CMAKE_PROJECT_NAME@
-Description: C'est une super librairie qui utilise gtk2
+Description: <%= projectDescription %>
 Version: 0.0.1
 Libs: -L@CMAKE_INSTALL_PREFIX@/lib
 Cflags: -I@CMAKE_INSTALL_PREFIX@/include
