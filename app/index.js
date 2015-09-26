@@ -39,6 +39,11 @@ CppSuiteGenerator.prototype.askFor = function askFor() {
     name: 'author',
     message: 'Who is the creator?',
     default: 'dummy'
+  }, {
+    name: 'addBenchmarks',
+    message: 'Create a benchmarks directory ?',
+    type: 'prompt',
+    default: false
   }];
 
   this.prompt(prompts, function (props) {
@@ -47,6 +52,7 @@ CppSuiteGenerator.prototype.askFor = function askFor() {
     this.projectDescription = props.projectDescription;
     this.author = props.author;
     this.projectRepo = props.projectRepo;
+    this.addBenchmarks = props.addBenchmarks;
 
     cb();
   }.bind(this));
@@ -89,7 +95,9 @@ CppSuiteGenerator.prototype.doxygen = function doxygen() {
 }
 
 CppSuiteGenerator.prototype.benchmarks = function benchmarks() {
-    this.mkdir('benchmarks');
-    this.copy('benchmarks/CMakeLists.txt', 'benchmarks/CMakeLists.txt');
-    this.copy('benchmarks/main.cpp', 'benchmarks/main.cpp');
+    if(this.addBenchmarks) {
+        this.mkdir('benchmarks');
+        this.copy('benchmarks/CMakeLists.txt', 'benchmarks/CMakeLists.txt');
+        this.copy('benchmarks/main.cpp', 'benchmarks/main.cpp');
+    }
 }

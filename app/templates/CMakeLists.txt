@@ -57,6 +57,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     )
 endif()
 
+<% if (addBenchmarks) { %>
 # Benchmarks
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
@@ -69,6 +70,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
         COMMAND benchmarks-<%= projectSlug %>
     )
 endif()
+<% } %>
 
 # Packaging
 #ADD_CUSTOM_TARGET(packaging
