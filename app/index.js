@@ -61,6 +61,7 @@ CppSuiteGenerator.prototype.askFor = function askFor() {
 
 CppSuiteGenerator.prototype.git = function git() {
   this.template('_gitignore', '.gitignore');
+  this.spawnCommand('git', ['init']);
 };
 
 CppSuiteGenerator.prototype.source = function source() {
@@ -84,7 +85,6 @@ CppSuiteGenerator.prototype.pkg_config = function pkg_config() {
 }
 
 CppSuiteGenerator.prototype.cmakeTools = function cmakeTools() {
-    this.spawnCommand('git', ['init']);
     this.spawnCommand('git', ['submodule', 'add', 'https://github.com/gpichot/cmake-modules', 'cmake']);
 }
 
