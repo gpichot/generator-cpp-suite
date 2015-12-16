@@ -12,6 +12,11 @@ A C++ Project [generator](http://yeoman.io) for lazy programmers.
 * Documentation: Doxygen
 * Install: Pkg-config (in progress)
 
+## Install
+You need npm and yeoman installed first, then:
+
+    npm install generator-cpp-suite
+
 ## Usage
 To create a new project in an empty directory run:
 
