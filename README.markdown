@@ -1,22 +1,16 @@
 # generator-cpp-suite
 
-A generator for [Yeoman](http://yeoman.io).
+A C++ Project [generator](http://yeoman.io) for lazy programmers.
 
-## Purpose
-I use it to set up new C++ project with CMake configured.
-It automatically sets up a git repository in the current directory.
+## Vitamins included: 
 
-## Supports
-It currently supports the following tools:
-
-* CMake
-* Pkg-config
-* Doxygen for documentation
-* GTest for unit testing (and testing)
-* Lcov and Gcov for code coverage and coverage report
-
-**Note**: for code coverage it will automatically download as a submodule
-a repository of CMake modules.
+* Project Build: CMake (with additional CMake modules)
+* Source Control: Git (with baked .gitignore) 
+* Testing: Google Test
+* Code Coverage and Coverage Report: Lcov and Gcov
+* Micro Benchmarking: Google Benchmark
+* Documentation: Doxygen
+* Install: Pkg-config (in progress)
 
 ## Usage
 To create a new project in an empty directory run:
