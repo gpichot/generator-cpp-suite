@@ -1,12 +1,16 @@
 
+# Add CPP Check
+include(CppcheckTargets)
+add_cppcheck_sources(test UNUSED_FUNCTIONS STYLE POSSIBLE_ERRORS FORCE)
+
 file(
-    GLOB
+    GLOB_RECURSE
     headers
     *.hpp
 )
 
 file(
-    GLOB
+    GLOB_RECURSE
     sources
     *.cpp
 )

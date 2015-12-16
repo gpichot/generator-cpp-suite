@@ -8,7 +8,7 @@ include_directories(
 )
 
 file(
-    GLOB
+    GLOB_RECURSE
     test_files
     *.cpp
 )
