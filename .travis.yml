@@ -39,8 +39,11 @@ before_install:
 install:
     # Build GTest and GMock
     - pushd "`pwd`"
-    - cd /usr/src/gtest && sudo cmake . && sudo cmake -j 4 --build . && sudo cp libg* /usr/local/lib/; cd -
-    - cd /usr/src/gmock && sudo cmake . && sudo cmake -j 4 --build . && sudo cp libg* /usr/local/lib/; cd -
+    - cd /usr/src/gtest && sudo cmake -DBUILD_SHARED_LIBS=ON . && sudo make -j 4 && sudo cp libg* /usr/local/lib/; cd -
+    - cd /usr/src/gmock && sudo cmake -DBUILD_SHARED_LIBS=ON . && sudo make -j 4 && sudo cp libg* /usr/local/lib/; cd -
+    - export GTEST_ROOT=/usr/src/gtest/
+    - export GMOCK_ROOT=/usr/src/gtest/
+    - sudo ldconfig
     - popd
 
 script:
