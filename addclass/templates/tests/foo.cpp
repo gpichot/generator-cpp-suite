@@ -3,7 +3,7 @@
 #include "<%= folder =%>/<%= classNameLower %>.hpp"
 
 
-TEST(<%= className%>, Test)
+TEST(<%= className =%>, Test)
 {
      ASSERT_EQ(6, 2);
 }
