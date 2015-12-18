@@ -12,6 +12,9 @@ before_install:
     - cmake --version
     - lcov --version
     - gcov --version
+    # Link this
+    - npm link
+    - npm install -g yeoman
     # Build GTest
     - pushd "`pwd`"
     - sudo mkdir /usr/src/gtest/build
@@ -23,6 +26,9 @@ before_install:
     - popd
 
 before_script:
+    - mkdir testbuild && cd testbuild
+    - echo 'yeotest\nyeotest\nYeotest\nme\ny\n' | yo cpp-suite
+    - echo 'MyClass\n\n\ny\n' | yo cpp-suite:addclass
     - mkdir build && cd build
 
 script:
