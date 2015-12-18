@@ -1,0 +1,65 @@
+language: cpp
+
+compiler:
+    - clang
+    - gcc
+
+os:
+    - linux
+
+addons:
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
+        packages:
+            - gcc-4.9
+            - g++-4.9
+            - cmake
+            - lcov
+            - expect
+
+before_script:
+    # Config 
+    - $CC --version
+    - $CXX --version
+    - cmake --version
+    - gcov --version
+    - lcov --version
+
+before_install:
+    # Install OS X stuff
+    - |
+        if test "$TRAVIS_OS_NAME" == "osx"; then
+        brew update
+        brew install lcov
+        fi
+    - |
+        if test "$TRAVIS_OS_NAME" == "linux"; then
+            if test "$CXX" == "g++" ; then
+                sudo apt-get install -qq g++-4.8
+                export CXX="g++-4.8"
+            fi
+        fi
+
+install:
+    # Build GTest and GMock
+    - git clone https://github.com/google/googletest
+    - cd googletest/googlemock
+    - autoreconf -fvi
+    - cmake .
+    - make
+    - sudo make install
+    - export GMOCK_ROOT="`pwd`"
+    - cd ../..
+
+script:
+    # Link this
+    - npm link
+    - npm install -g yo
+      # Launch yo cpp-suite
+    - mkdir testbuild && cd testbuild
+    - expect -f ../travis
+      # Build dummy project
+    - mkdir build && cd build
+    - cmake ..
+    - make VERBOSE=1
