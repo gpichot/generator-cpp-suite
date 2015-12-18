@@ -38,11 +38,11 @@ install:
 script:
     # Link this
     - npm link
-    - npm install -g yeoman
+    - npm install -g yo
     # Launch yo cpp-suite
     - mkdir testbuild && cd testbuild
-    - echo 'yeotest\nyeotest\nYeotest\nme\ny\n' | yo cpp-suite
-    - echo 'MyClass\n\n\ny\n' | yo cpp-suite:addclass
+    - "echo 'yeotest\nyeotest\nYeotest\nme\ny\n' | yo cpp-suite"
+    - "echo 'MyClass\n\n\ny\n' | yo cpp-suite:addclass"
     # Build dummy project
     - mkdir build && cd build
     - cmake ..
