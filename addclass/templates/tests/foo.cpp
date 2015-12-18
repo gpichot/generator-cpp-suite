@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-#include "<%= classNameLower %>.hpp"
+#include "<%= folder =%>/<%= classNameLower %>.hpp"
 
 
 TEST(<%= className%>, Test)
