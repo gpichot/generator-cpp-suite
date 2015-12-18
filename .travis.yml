@@ -28,6 +28,14 @@ before_script:
     - gcov --version
     - lcov --version
 
+before_install:
+  # Install OS X stuff
+  - |
+    if test "$TRAVIS_OS_NAME" == "osx"; then
+        brew update
+        brew install lcov
+    fi
+
 install:
     # Build GTest and GMock
     - pushd "`pwd`"
