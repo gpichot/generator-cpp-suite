@@ -9,16 +9,14 @@ os:
     - osx
 
 addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
+    apt:
+        sources:
+            - ubuntu-toolchain-r-test
     packages:
-      - gcc-4.9
+        - gcc-4.9
       - g++-4.9
       - cmake
       - lcov
-      - libgtest-dev
-      - google-mock
 
 before_script:
     # Config 
@@ -29,32 +27,32 @@ before_script:
     - lcov --version
 
 before_install:
-  # Install OS X stuff
-  - |
-    if test "$TRAVIS_OS_NAME" == "osx"; then
+    # Install OS X stuff
+    - |
+        if test "$TRAVIS_OS_NAME" == "osx"; then
         brew update
         brew install lcov
-    fi
+        fi
 
 install:
     # Build GTest and GMock
-    - pushd "`pwd`"
-    - cd /usr/src/gtest && sudo cmake -DBUILD_SHARED_LIBS=ON . && sudo make -j 4 && sudo cp libg* /usr/local/lib/; cd -
-    - cd /usr/src/gmock && sudo cmake -DBUILD_SHARED_LIBS=ON . && sudo make -j 4 && sudo cp libg* /usr/local/lib/; cd -
-    - export GTEST_ROOT=/usr/src/gtest/
-    - export GMOCK_ROOT=/usr/src/gtest/
-    - sudo ldconfig
-    - popd
+    - wget http://googletest.googlecode.com/files/gtest-1.7.0.zip
+    - tar -xvzf gtest-1.7.0.zip
+    - cd gtest-1.7.0
+    - cmake .
+    - make
+    - export GTEST_ROOT="`pwd`"
+    - cd ..
 
 script:
     # Link this
     - npm link
     - npm install -g yo
-    # Launch yo cpp-suite
+      # Launch yo cpp-suite
     - mkdir testbuild && cd testbuild
     - "echo 'yeotest\nyeotest\nYeotest\nme\ny\n' | yo cpp-suite"
     - "echo 'MyClass\n\n\ny\n' | yo cpp-suite:addclass"
-    # Build dummy project
+      # Build dummy project
     - mkdir build && cd build
     - cmake ..
     - make VERBOSE=1
