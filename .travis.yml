@@ -49,6 +49,7 @@ script:
     - npm link
     - npm install -g yo
       # Launch yo cpp-suite
+    - chmod +x ./travis.sh
     - ./travis.sh
       # Build dummy project
     - mkdir build && cd build
