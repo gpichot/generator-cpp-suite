@@ -36,13 +36,13 @@ before_install:
 
 install:
     # Build GTest and GMock
-    - wget http://googletest.googlecode.com/files/gtest-1.7.0.zip
-    - tar -xvzf gtest-1.7.0.zip
-    - cd gtest-1.7.0
+    - git clone https://github.com/google/googletest
+    - cd googletest/googlemock
+    - autoreconf -fvi
     - cmake .
     - make
-    - export GTEST_ROOT="`pwd`"
-    - cd ..
+    - export GMOCK_ROOT="`pwd`"
+    - cd ../..
 
 script:
     # Link this
