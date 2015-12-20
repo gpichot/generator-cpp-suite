@@ -23,6 +23,6 @@ send "\r"
 expect "In folder (src/...):"
 send "\r"
 expect "Just generate header in source?"
-send "n"
+send "n\r"
 
 expect eof
