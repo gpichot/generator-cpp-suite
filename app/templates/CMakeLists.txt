@@ -12,8 +12,8 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 project(<%= projectSlug %> CXX)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++14")
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --std=c++11")
 
 # Packaging
 #ADD_CUSTOM_TARGET(packaging
