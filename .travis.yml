@@ -50,7 +50,6 @@ script:
     - npm link
     - npm install -g yo
       # Launch yo cpp-suite
-    - chmod +x ./travis.sh
     - mkdir testbuild && cd testbuild
     - expect -f ../travis
       # Build dummy project
