@@ -42,6 +42,7 @@ install:
     - autoreconf -fvi
     - cmake .
     - make
+    - sudo make install
     - export GMOCK_ROOT="`pwd`"
     - cd ../..
 
