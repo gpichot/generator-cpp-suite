@@ -53,7 +53,7 @@ script:
       # Launch yo cpp-suite
     - chmod +x ./travis.sh
     - mkdir testbuild && cd testbuild
-    - expect -f travis
+    - expect -f ../travis
       # Build dummy project
     - mkdir build && cd build
     - cmake ..
