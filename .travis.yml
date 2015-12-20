@@ -17,6 +17,7 @@ addons:
             - g++-4.9
             - cmake
             - lcov
+            - expect
 
 before_script:
     # Config 
@@ -50,6 +51,7 @@ script:
     - npm install -g yo
       # Launch yo cpp-suite
     - chmod +x ./travis.sh
+    - mkdir testbuild && cd testbuild
     - ./travis.sh
       # Build dummy project
     - mkdir build && cd build
