@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/gpichot/generator-cpp-suite.svg?branch=master)](https://travis-ci.org/gpichot/generator-cpp-suite)
 # generator-cpp-suite
 
 A C++ Project [generator](http://yeoman.io) for lazy programmers.
