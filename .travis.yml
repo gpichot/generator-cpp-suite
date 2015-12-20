@@ -52,7 +52,7 @@ script:
       # Launch yo cpp-suite
     - chmod +x ./travis.sh
     - mkdir testbuild && cd testbuild
-    - ./travis.sh
+    - ../travis.sh
       # Build dummy project
     - mkdir build && cd build
     - cmake ..
